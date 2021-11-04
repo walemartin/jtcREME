@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Shell xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" FlyoutHeaderBehavior="CollapseOnScroll" xmlns:views="clr-namespace:jtcREME.Views" x:Class="jtcREME.AppShell">
+
+
+    <FlyoutItem FlyoutDisplayOptions="AsMultipleItems">
+        <Tab Title="REME"
+             Icon="paw.png">
+            <ShellContent Title="Profile"
+                          Icon="cat.png"
+                          ContentTemplate="{DataTemplate views:CatPage}" />
+            <ShellContent Title="Property"
+                          Icon="cat.png"
+                          ContentTemplate="{DataTemplate views:CatPage}" />
+        </Tab>
+        <ShellContent Title="Tenants"
+                          Icon="cat.png"
+                          ContentTemplate="{DataTemplate views:CatPage}" />
+        <ShellContent Title="Tenancy Status"
+                          Icon="cat.png"
+                          ContentTemplate="{DataTemplate views:CatPage}" />
+        <ShellContent Title="Forum"
+                          Icon="cat.png"
+                          ContentTemplate="{DataTemplate views:CatPage}" />
+        
+    </FlyoutItem>
+
+    <ShellContent Title="About"
+                          Icon="cat.png"
+                          ContentTemplate="{DataTemplate views:CatPage}" />
+</Shell>
