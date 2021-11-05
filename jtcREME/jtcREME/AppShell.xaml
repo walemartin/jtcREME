@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<Shell xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" FlyoutHeaderBehavior="CollapseOnScroll" xmlns:views="clr-namespace:jtcREME.Views" x:Class="jtcREME.AppShell">
+<Shell xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:sys="clr-namespace:System;assembly=netstandard" FlyoutHeaderBehavior="CollapseOnScroll" xmlns:views="clr-namespace:jtcREME.Views" x:Class="jtcREME.AppShell" FlyoutBackground="mediumpurple">
 
 
     <FlyoutItem FlyoutDisplayOptions="AsMultipleItems">
@@ -21,10 +21,28 @@
         <ShellContent Title="Forum"
                           Icon="cat.png"
                           ContentTemplate="{DataTemplate views:CatPage}" />
+        <ShellContent Title="Log Out"
+                          Icon="cat.png"
+                          ContentTemplate="{DataTemplate views:LogoutPage}" />
         
     </FlyoutItem>
 
     <ShellContent Title="About"
                           Icon="cat.png"
                           ContentTemplate="{DataTemplate views:CatPage}" />
+
+    <Shell.FlyoutFooterTemplate>
+        <DataTemplate>
+            <StackLayout>
+                <Label Text="Xaminals"
+                       TextColor="GhostWhite"
+                       FontAttributes="Bold"
+                       HorizontalOptions="Center" />
+                <Label Text="{Binding Source={x:Static sys:DateTime.Now}, StringFormat='{0:MMMM dd, yyyy}'}"
+                       TextColor="red"
+                       HorizontalOptions="Center" />
+            </StackLayout>
+        </DataTemplate>
+    </Shell.FlyoutFooterTemplate>
 </Shell>
+

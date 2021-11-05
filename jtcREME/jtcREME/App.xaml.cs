@@ -9,8 +9,9 @@ namespace jtcREME
         public App()
         {
             InitializeComponent();
-
-            MainPage = new AppShell();
+            Routing.RegisterRoute("AppShell", typeof(AppShell));
+            Routing.RegisterRoute("LoginPage", typeof(LoginPage));
+            MainPage = new LoginPage();
         }
 
         protected override void OnStart()

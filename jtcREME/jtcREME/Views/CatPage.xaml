@@ -3,12 +3,34 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="jtcREME.Views.CatPage"
              xmlns:sys="clr-namespace:System;assembly=netstandard"
-             Title="Dashboard">
+             Title="Dashboard" BackgroundColor="Azure">
     <ContentPage.Content>
         <StackLayout>
-            <Label Text="Welcome to Jide Taiwo &amp; Co."
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+            <Frame BorderColor="mediumpurple" BackgroundColor="White" CornerRadius="10" Margin="10">
+                <Label Padding="50" HorizontalOptions="Center" Text="Welcome to Jide Taiwo &amp; Co."/>
+            </Frame>
+
+            <Grid Margin="20,35,20,20" HorizontalOptions="Center">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="0.5*" />
+                    <ColumnDefinition Width="0.5*" />
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="50" />
+                    <RowDefinition Height="50" />
+                </Grid.RowDefinitions>
+                <Button BackgroundColor="mediumpurple" TextColor="White" Text="Notifications" />
+                <Button BackgroundColor="mediumpurple" TextColor="White" Grid.Column="1"
+           Text="Surveyor" />
+                <Button BackgroundColor="mediumpurple" TextColor="White" Grid.Row="1"
+           Text="Services" />
+                <Button BackgroundColor="mediumpurple" TextColor="White" Grid.Column="1"
+           Grid.Row="1"
+           Text="Help" />
+            </Grid>
+
+            <Button Text="Sign Out"></Button>
+
             <Label Text="{Binding Source={x:Static sys:DateTime.Now}, StringFormat='{0:MMMM dd, yyyy}'}"
                TextColor="Navy"
                HorizontalOptions="Center" />
